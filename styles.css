@@ -1,0 +1,161 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    font-size: .75rem;
+    font-family: Kumbh Sans;
+    background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+}
+
+.desktop {
+    display: none;
+}
+
+.attribution {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+main {
+    padding: calc(5rem + 100px) 0 5rem 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    padding: 1.5rem;
+    background-color: white;
+    width: 85%;
+    border-radius: 1rem;
+    height: fit-content;
+}
+
+.question .answer {
+    margin-top: 1rem;
+    padding-right: 1rem;
+    line-height: 1rem;
+    color: hsl(240, 6%, 50%);
+    display: none;
+}
+
+.question.clicked .answer {
+    display: block;
+}
+
+.faq {
+    font-size: .8rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid hsl(240, 5%, 91%);
+}
+
+.question span {
+    color: hsl(237, 12%, 33%);
+    display: flex;
+    justify-content: space-between;
+}
+
+.question.clicked span {
+    font-weight: 700;
+}
+
+.question.clicked span::after {
+    transform: scaleY(-1);
+}
+
+.question span:hover {
+    color: hsl(14, 88%, 65%);
+    cursor: pointer;
+}
+
+.question span::after {
+    content: url(./images/icon-arrow-down.svg);
+    margin-left: 5px;
+}
+
+.container .pic {
+    position: relative;
+}
+
+.pic .woman-mobile {
+    position: absolute;
+    left: 50%;
+    transform: translate(-55%, -67%);
+}
+
+.pic .bg-mobile {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -25%);
+}
+
+.container h1 {
+    color: hsl(238, 29%, 16%);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+@media screen and (min-width: 975px) {
+    .container {
+        max-width: 920px;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    main {
+        padding: 5rem 0;
+    }
+
+    .faqs {
+        flex-grow: 1;
+        padding: 5rem 3rem 5rem 1rem;
+    }
+
+    .faqs h1 {
+        text-align: left;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: block;
+    }
+
+    .pic {
+        position: relative;
+        background-image: url(./images/bg-pattern-desktop.svg);
+        background-position: 110% 67%;
+        background-repeat: no-repeat;
+    }
+
+    .pic .woman-desktop {
+        overflow: hidden;
+        position: relative;
+        top: 15%;
+    }
+
+    .faq {
+        max-width: 340px;
+    }
+
+    .woman-desktop img {
+        transform: translateX(-10%);
+    }
+
+    .box {
+        position: absolute;
+        top: 40%;
+        left: -20%;
+    }
+}
